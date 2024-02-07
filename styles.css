@@ -13,12 +13,16 @@ body {
   height: 150px;
   position: relative;
   cursor: pointer;
+  perspective: 800px; /* Add perspective for 3D effect */
 }
 
 .lid, .box {
   width: 100%;
   height: 50%;
   background-color: #c62828;
+  position: absolute;
+  transform-origin: top;
+  transition: transform 0.5s ease; /* Add smooth transition */
 }
 
 .lid {
@@ -29,6 +33,7 @@ body {
 .box {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  transform: rotateX(90deg); /* Initially close the lid */
 }
 
 .gift-box:hover .lid {
@@ -39,4 +44,3 @@ body {
   0% { transform: rotateX(0); }
   100% { transform: rotateX(-90deg); }
 }
-      
